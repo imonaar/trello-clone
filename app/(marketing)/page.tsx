@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button";
-import localFont from 'next/font/local'
 import { Medal } from "lucide-react";
-import Link from "next/link";
 import { Poppins } from "next/font/google";
+import localFont from 'next/font/local';
+import Link from "next/link";
 
 import { cn } from "@/lib/utils";
 
