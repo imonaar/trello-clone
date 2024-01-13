@@ -2,6 +2,7 @@
 
 import { AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
+import { Skeleton } from "@/components/ui/skeleton";
 import { cn } from "@/lib/utils";
 import { Activity, CreditCard, Layout, Settings } from "lucide-react";
 import Image from "next/image";
@@ -37,7 +38,7 @@ export default function SidebarNavItem({ isExpanded, isActive, organization, onE
             href: `/organization/${organization.id}/activity`
         },
         {
-            label: "Setting",
+            label: "Settings",
             icon: <Settings className="h-4 w-4 mr-2" />,
             href: `/organization/${organization.id}/settings`
         },
@@ -95,5 +96,19 @@ export default function SidebarNavItem({ isExpanded, isActive, organization, onE
             </AccordionContent>
 
         </AccordionItem>
+    )
+}
+
+
+SidebarNavItem.skeleton = function SkeletonNavItem() {
+    return (
+        <>
+            <div className="flex items-center gap-x-2">
+                <div className="w-10 h-10 relative shrink-0">
+                    <Skeleton className="h-10 w-10 absolute" />
+                </div>
+                <Skeleton className="h-10 w-full" />
+            </div>
+        </>
     )
 }

@@ -1,7 +1,6 @@
-import { OrganizationSwitcher, auth } from "@clerk/nextjs"
+import prismadb from "@/lib/db"
 
-export default function OrganizationPage() {
-    const { userId, orgId } = auth()
+export default async function OrganizationPage() {
 
     return (
         <div>
